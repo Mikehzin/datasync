@@ -1,9 +1,4 @@
-#!/usr/bin/expect -f
-
-sudo_password="F@RM4C1A"
-
-# Comando que requer privilégios de root
-echo "$sudo_password" | sudo root
+#!/usr/bin
 
 estado=$(/opt/mssql-tools/bin/sqlcmd -h -1 -S 127.0.0.1 -U SA -P ERPM@2017 -d PDV -Q 'SET NOCOUNT ON; SELECT ESTADO FROM PARAMETROS')
 estado=${estado,,}
@@ -11,7 +6,6 @@ estado="$(echo "$estado" | tr -d '[:space:]')"
 
 #Caminho do arquivo fstab
 arquivo_fstab="/etc/fstab"
-
 
 #Lista de Lojas Homolog
 lojas_permitidas=("247" "319" "13" "14")
