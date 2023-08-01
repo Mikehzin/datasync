@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/bin/bash
 
 estado=$(/opt/mssql-tools/bin/sqlcmd -h -1 -S 127.0.0.1 -U SA -P ERPM@2017 -d PDV -Q 'SET NOCOUNT ON; SELECT ESTADO FROM PARAMETROS')
 estado=${estado,,}
